@@ -1,8 +1,11 @@
 import React, {useState} from 'react';
 
 import copyIco from '../../assets/ico/content_copy_24dp.svg'
+import {useNavigate} from "react-router";
+import {HOME_ROUTE} from "../../utils/const";
 
 const Station = () => {
+    const navigate = useNavigate();
     const [value, setValue] = useState<string>('');
     const [demandInfo, setDemandInfo] = useState<any[]>([]);
 
@@ -74,6 +77,19 @@ const Station = () => {
                     className="w-full bg-indigo-600 text-white font-semibold rounded-md px-4 py-2 mt-4 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
                 >
                     Submit
+                </button>
+                <button
+                    onClick={() => navigate(HOME_ROUTE)}
+                    type="button"
+                    className="text-xs mt-2 font-semibold flex justify-center align-middle gap-2 border p-2 rounded hover:bg-gray-200 transition"
+                >
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
+                         stroke="currentColor" className="size-4">
+                        <path strokeLinecap="round" strokeLinejoin="round"
+                              d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3"/>
+                    </svg>
+
+                    Back
                 </button>
             </div>
             <ul role="list" className="divide-y border-l p-4 w-full divide-gray-100">
